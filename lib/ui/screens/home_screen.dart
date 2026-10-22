@@ -123,7 +123,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           sessions.isEmpty ? '—' : '${score.round()}',
                           style: context.texts.displayLarge?.copyWith(
-                            fontSize: sessions.isEmpty ? 58 : 72,
+                            fontSize: sessions.isEmpty ? 46 : 72,
+                            color: sessions.isEmpty ? c.muted : null,
                           ),
                         ),
                         if (sessions.isNotEmpty)
@@ -364,7 +365,7 @@ class _HeroScanCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 8),
                       _Orb(
                         icon: Icons.remove_red_eye_outlined,
                         color: c.orange,
@@ -744,10 +745,10 @@ class _Orb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 6),
+      padding: const EdgeInsets.only(left: 4),
       child: Container(
-        width: 46,
-        height: 46,
+        width: 42,
+        height: 42,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: muted
@@ -762,7 +763,7 @@ class _Orb extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            Icon(icon, size: 18, color: muted ? Colors.white70 : color),
+            Icon(icon, size: 17, color: muted ? Colors.white70 : color),
             Positioned(
               bottom: 3,
               child: Text(
